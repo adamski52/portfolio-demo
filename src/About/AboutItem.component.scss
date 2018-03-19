@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+.about-item-content {
+  white-space: pre-wrap;
+  color: #fff;
+  font-size: 1.2em;
+  vertical-align: top;
+
+  [class^="jna-icon-"]:before,
+  [class*=" jna-icon-"]:before {
+    font-size: 1.2em;
+    float: left;
+  }
+}
+
+.about-item-link,
+.about-item-text {
+  float: left;
+  margin-left: 5px;
+}
+
+.about-item-link {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
