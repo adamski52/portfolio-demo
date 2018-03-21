@@ -22,7 +22,7 @@ class About extends Component {
     render() {
         return (
             <section className="section about-wrapper">
-                <div class="about-inner">
+                <div className="about-inner">
                     <h1 className="decorative">Jonathan Adamski</h1>
                     <ul className="row">{this.makeSection("geographical")}</ul>
                     <ul className="row">{this.makeSection("professional")}</ul>

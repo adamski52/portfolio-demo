@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+.skill-item {
+  list-style: none;
+  padding: 10px;
+  border: 10px solid rgba(#aaa8d7, .8);
+  background: rgba(#7878b4, .5);
+  text-align: center;
+  line-height: 75px/2;
+  width: 75px;
+  height: 75px;
+  border-radius: 75px;
+  font-size: 2.5em;
+  color: #fff;
+}
