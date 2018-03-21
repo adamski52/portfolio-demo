@@ -4,48 +4,48 @@ import HttpService from "../Http.service";
 class AboutService {
     static mock = {
         social: [{
-            key: "twitter",
+            key: "Twitter",
             value: "@oooyaya",
             url: "http://www.twitter.com",
             className: "jna-icon-twitter"
         }, {
-            key: "instagram",
+            key: "Instagram",
             value: "oooyaya",
             url: "http://www.instagram.com",
             className: "jna-icon-instagram"
         }, {
-            key: "steam",
+            key: "Steam",
             value: "the macgyver theme song",
             url: "http://www.steampowered.com",
             className: "jna-icon-steam"
         }],
         professional: [{
-            key: "github",
+            key: "Github",
             value: "adamski52",
             url: "http://www.github.com",
             className: "jna-icon-github"
         }, {
-            key: "linkedin",
+            key: "LinkedIn",
             value: "jadamski",
             url: "http://www.linkedin.com",
             className: "jna-icon-linkedin"
         }, {
-            key: "stackoverflow",
+            key: "Stack Overflow",
             value: "oooyaya",
             url: "http://www.stackoverflow.com",
             className: "jna-icon-stack-overflow"
         }],
         geographical: [ {
-            key: "location",
+            key: "Location",
             value: "Cleveland, OH\nUSA, Earth",
             className: "jna-icon-map-marker"
         }, {
-            key: "email",
+            key: "Email",
             value: "me@jonathanadamski.com",
             url: "mailto:me@jonathanadamski.com",
             className: "jna-icon-envelope"
         }, {
-            key: "phone",
+            key: "Phone",
             value: "734-968-3174",
             url: "tel:7349683174",
             className: "jna-icon-phone"

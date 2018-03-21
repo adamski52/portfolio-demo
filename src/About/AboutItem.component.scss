@@ -1,24 +1,34 @@
 @charset "UTF-8";
 
-@import "../variables";
+@import "variables";
+
+$left-home: 0px;
+$left-push: $left-home + 30px;
+
+$top-home: 5px;
+$top-push: $top-home + 5px;
+
+$transition: all .1s linear;
 
 .about-item-content {
+  position: relative;
   white-space: pre-wrap;
   color: #fff;
-  font-size: 1.2em;
-  vertical-align: top;
+  height: 2em;
+  font-size: 1em;
 
-  [class^="jna-icon-"]:before,
-  [class*=" jna-icon-"]:before {
-    font-size: 1.2em;
-    float: left;
+  &[class^="jna-icon-"]:before,
+  &[class*=" jna-icon-"]:before {
+    font-size: 1.5em;
+    position: absolute;
+    left: $left-home;
   }
 }
 
-.about-item-link,
 .about-item-text {
-  float: left;
-  margin-left: 5px;
+  position: absolute;
+  left: $left-push;
+  top: $top-push;
 }
 
 .about-item-link {
@@ -32,5 +42,39 @@
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.about-item-description {
+  font-size: .5em;
+  display: block;
+  position: absolute;
+  left: $left-push;
+}
+
+
+@media (min-width: $screen-md-min) {
+  .about-item-text {
+    transition: $transition;
+    top: $top-home;
+  }
+
+  .about-item-description {
+    transition: $transition;
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  .about-item-content {
+    &:hover {
+      .about-item-text,
+      .about-item-link {
+        top: $top-push;
+      }
+
+      .about-item-description {
+        max-height: 100%;
+      }
+    }
   }
 }

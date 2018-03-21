@@ -1,11 +1,10 @@
 @charset "UTF-8";
 
-@import "fonts";
-@import "jna-icons";
 @import "variables";
 
 body,
-html {
+html,
+#app {
   font-size: 16px;
   font-family: $font-main;
 }
@@ -13,6 +12,7 @@ html {
 body,
 html,
 .section,
+#app,
 .app-wrapper {
   padding: 0;
   margin: 0;

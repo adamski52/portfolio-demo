@@ -3,14 +3,29 @@
 @import "../variables";
 
 .decorative {
-  margin: 0;
+  margin: 0 0 .5em 0;
   font-family: $font-decorative;
   text-align: center;
   color: #fff;
   font-size: 2.5em;
 }
 
-.about {
+.about-wrapper {
   background: url(../assets/backgrounds/about.jpg) no-repeat bottom center;
   background-size: cover;
+  position: relative;
+  padding-top: 2em;
+}
+
+@media (min-width: $screen-md-min) {
+  .decorative {
+    font-size: 3em;
+  }
+
+  .about-inner {
+    position: relative;
+    top: 50%;
+    margin-top: -150px;
+    height: 300px;
+  }
 }
