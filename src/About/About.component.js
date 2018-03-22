@@ -13,7 +13,7 @@ class About extends Component {
         return this.state[name].map((item) => {
             return (
                 <li key={item.key} className="col-md-4 col-md-push-0 col-xs-8 col-xs-push-2">
-                    <AboutItem item={item}></AboutItem>
+                    <AboutItem item={item} />
                 </li>
             );
         });

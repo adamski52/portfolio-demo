@@ -4,7 +4,7 @@ import "./SkillItem.component.css";
 class SkillItem extends Component {
     render() {
         return (
-            <p></p>
+            <i className={"skill-item-icon " + this.props.item.className}/>
         );
     }
 }

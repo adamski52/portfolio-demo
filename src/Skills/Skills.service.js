@@ -53,7 +53,7 @@ class SkillsService {
     }, {
         key: "Webstorm",
         skill: 100,
-        className: "webstorm-plain"
+        className: "devicon-webstorm-plain"
     }, {
         key: "Tomcat",
         skill: 70,

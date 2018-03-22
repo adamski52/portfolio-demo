@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+$gauge-size: 95px;
+$gauge-width: 8px;
+
+.gauge-wrap {
+  position:absolute;
+  top: -$gauge-width - 2;
+  left: -$gauge-width - 2;
+  width:$gauge-size;
+  height:$gauge-size/2;
+}
+
+.gauge-core {
+  position:relative;
+  overflow:hidden;
+  height:inherit;
+  width:inherit;
+}
+
+.gauge-wrap-before {
+  position:absolute;
+  width:$gauge-width;
+  height:$gauge-width;
+  bottom: -($gauge-width/2) + 1;
+  left:0;
+  //clip: rect($gauge-width/2, $gauge-width, $gauge-width, 0);
+  border-radius:$gauge-width/2;
+  z-index:5;
+  background-color: $skills-gauge-active;
+}
+
+.gauge-wrap-after {
+  position:absolute;
+  width:$gauge-width;
+  height:$gauge-width;
+  bottom: -($gauge-width/2) + 1;
+  right:0;
+  //clip: rect($gauge-width/2, $gauge-size, $gauge-size, 0);
+  border-radius:$gauge-width/2;
+  z-index:1;
+  background-color: $skills-gauge-empty;
+}
+
+.gauge-bg {
+  position: absolute;
+  width: $gauge-size;
+  height: $gauge-size;
+  border-radius:$gauge-size/2;
+  background-color: $skills-gauge-empty;
+}
+
+.gauge-active-wrap {
+  position: absolute;
+  top:0;
+  left:0;
+  width:$gauge-size;
+  height:$gauge-size;
+  overflow:hidden;
+  border-radius:$gauge-size/2;
+  transform: rotate(18deg);
+}
+
+.gauge-active {
+  top:$gauge-size/2;
+  position: absolute;
+  width: $gauge-size;
+  height: $gauge-size/2;
+  overflow:visible;
+  border-radius:0 0 $gauge-size $gauge-size;
+  z-index:1;
+  background-color: $skills-gauge-active;
+}
+
+.gauge-active-before {
+  position:absolute;
+  width:$gauge-width*2;
+  height:$gauge-width*2;
+  background-color: inherit;
+  top: -($gauge-width/2) + 1;
+  left:0;
+  //clip: rect(0, $gauge-width, $gauge-width/2, 0);
+  border-radius:$gauge-width/2;
+  z-index:5;
+}
+
+.gauge-cap {
+  position: absolute;
+  top:$gauge-width;
+  left:$gauge-width;
+  width: $gauge-size - ($gauge-width*2);
+  height: $gauge-size - ($gauge-width*2);
+  border-radius:$gauge-size - ($gauge-width*2);
+  z-index:5;
+  background-color: #292e00;
+}
+
+
