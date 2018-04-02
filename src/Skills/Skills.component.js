@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import "./Skills.component.css";
 import SkillsService from "./Skills.service";
 import SkillItem from "./SkillItem.component";
-import SkillItemGauge from "./SkillItemGauge.component";
 
 class Skills extends Component {
     componentWillMount() {
@@ -11,19 +10,13 @@ class Skills extends Component {
     }
 
     getItems() {
-        console.log("state", this.state);
-        let items = this.state.skills.map((item) => {
+        return this.state.skills.map((item) => {
             return (
                 <li key={item.key} tabIndex="0" className="skill-item">
-                    <SkillItemGauge item={item}/>
                     <SkillItem item={item}/>
                 </li>
             );
         });
-
-        console.log("items", items);
-
-        return items;
     }
 
     render() {

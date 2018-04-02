@@ -2,6 +2,8 @@
 
 @import "../variables";
 
+$gauge-size: 101px;
+
 .skill-item {
   list-style: none;
   display: inline-block;
@@ -12,39 +14,102 @@
   &:focus {
     .skill-item-icon {
       transform: scale(1);
-      border-color: $skills-accent;
       background: rgba($skills-accent, 1);
     }
-
-    .skill-item-gauge {
-      opacity: 1;
-      transform: scale(1);
-    }
   }
-}
-
-.skill-item-gauge {
-  transform: scale(0);
-  opacity: 0;
-  transition: .1s  all linear;
 }
 
 .skill-item-icon {
   transform: scale(.5);
   transition: .1s all linear;
-}
-
-.skill-item-icon {
   position: relative;
   z-index: 5;
   display: block;
   border: 10px solid rgba($skills-border, .8);
   background: rgba($skills-background, .5);
   text-align: center;
-  line-height: 1.4em;
-  width: 75px;
-  height: 75px;
-  border-radius: 75px;
-  font-size: 2.5em;
+  line-height: 5rem;
+  width: $gauge-size;
+  height: $gauge-size;
+  border-radius: $gauge-size;
+  font-size: 3rem;
   color: $skills-foreground;
+}
+
+.skill-item-gauge {
+  width: $gauge-size;
+  height: $gauge-size;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  box-sizing: border-box;
+}
+
+.skill-item-gauge-indicator {
+  height: 100%;
+  width: 100%;
+  clip: rect(0, $gauge-size, $gauge-size, $gauge-size / 2);
+  left: 0;
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  border-radius: $gauge-size/2;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    border: $gauge-size / 10 solid #fff;
+    border-radius: $gauge-size/2;
+    box-sizing: border-box;
+    clip: rect(0, $gauge-size / 2, $gauge-size, 0);
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+}
+
+@mixin draw-skill($progress, $color) {
+  .skill-item-gauge-indicator {
+    @if $progress > 50 {
+      clip: rect(auto, auto, auto, auto);
+      &::after {
+        transform: rotate(180deg);
+      }
+    } @else {
+      &::after {
+        display: none;
+      }
+    }
+
+    &::before,
+    &::after {
+      border-color: $color;
+    }
+
+    &::before {
+      transform: rotate($progress * 3.6deg);
+    }
+  }
+}
+
+@for $i from 0 through 100 {
+  .skill-item-indicator-#{$i} {
+    @include draw-skill($i, adjust_hue(#f00, $i * 1.1deg));
+  }
+}
+
+.skill-item-indicator-100 {
+  box-shadow: 0 0 40px #fff;
+  transition: box-shadow .3s linear;
+
+  .skill-item-gauge-indicator {
+    &::before,
+    &::after {
+      transition: border-color .3s linear;
+      border-color: #12caff;
+    }
+  }
 }
