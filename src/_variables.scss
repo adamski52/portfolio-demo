@@ -13,12 +13,15 @@ $font-main: "comfortaa";
 $font-icons: "jna-icons";
 $font-form: "crayonhand";
 
-$skills-background: #745b2f;
-$skills-border: #aba567;
-$skills-foreground: #ebf4bc;
-$skills-accent: #5b6220;
+$skills-background: #57342f;
+$skills-border: #57342f;
+$skills-foreground: #d5bcbb;
 
-$skills-gauge-active: #ffd800;
-$skills-gauge-empty: #b6bd92;
+$skills-background-active: #fff;
+$skills-border-active: #57342f;
+$skills-foreground-active: #57342f;
+$skills-accent-active: #d5bcbb;
 
+$skill-bad: #dd8689;
+$skill-perfect: #fff;
 

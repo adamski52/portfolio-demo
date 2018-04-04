@@ -3,6 +3,7 @@ import "./SkillItem.component.css";
 
 class SkillItem extends Component {
     tickRate = 5;
+    gap = 75;
 
     constructor(props) {
         super(props);
@@ -12,6 +13,20 @@ class SkillItem extends Component {
         this.state = {
             value: 0
         };
+    }
+
+    getRandomDepth() {
+        return Math.round(Math.random() * 4) + 1;
+    }
+
+    getClassNames() {
+        let classes = [
+            "skill-item-icon",
+            "skill-item-indicator-" + this.state.value,
+            this.props.item.className,
+            "depth-" + this.getRandomDepth()
+        ];
+        return classes.join(" ");
     }
 
     onMouseLeave() {
@@ -51,10 +66,11 @@ class SkillItem extends Component {
 
     render() {
         return (
-            <div onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter} className={"skill-item-icon skill-item-indicator-" + this.state.value + " " + this.props.item.className}>
+            <div onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter} className={this.getClassNames()}>
                 <div className="skill-item-gauge">
                     <div className="skill-item-gauge-indicator"/>
                 </div>
+                <div className="skill-item-talent">{this.props.item.key}</div>
             </div>
         );
     }

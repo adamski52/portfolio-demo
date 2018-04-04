@@ -19,7 +19,7 @@ class SkillsService {
         skill: 100,
         className: "devicon-yarn-plain"
     }, {
-        key: "Handlebars/Mustache",
+        key: "Handlebars & Mustache",
         skill: 100,
         className: "devicon-handlebars-plain"
     }, {
@@ -135,7 +135,7 @@ class SkillsService {
         skill: 100,
         className: "devicon-confluence-plain"
     }, {
-        key: "Bitbucket / Stash",
+        key: "Bitbucket & Stash",
         skill: 100,
         className: "devicon-bitbucket-plain"
     }, {
@@ -159,7 +159,7 @@ class SkillsService {
         skill: "C",
         className: "devicon-c-plain"
     }, {
-        key: "NW / Node Webkit",
+        key: "NW & Node Webkit",
         skill: 0,
         className: "devicon-nodewebkit-plain"
     }, {
@@ -203,11 +203,11 @@ class SkillsService {
         skill: 60,
         className: "devicon-android-plain"
     }, {
-        key: "Angular / AngularJS",
+        key: "Angular & AngularJS",
         skill: 100,
         className: "devicon-angularjs-plain"
     }, {
-        key: "Apple/macOS",
+        key: "Apple & macOS",
         skill: 90,
         className: "devicon-apple-plain"
     }, {
@@ -267,7 +267,7 @@ class SkillsService {
         skill: 70,
         className: "devicon-java-plain"
     }, {
-        key: "JavaScript / ES6+",
+        key: "JavaScript & ES6+",
         skill: 100,
         className: "devicon-javascript-plain"
     }, {
@@ -331,7 +331,7 @@ class SkillsService {
         skill: 25,
         className: "devicon-ruby-plain"
     }, {
-        key: "SASS / SCSS",
+        key: "SASS & SCSS",
         skill: 100,
         className: "devicon-sass-plain"
     }, {
