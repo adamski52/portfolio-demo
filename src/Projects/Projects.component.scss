@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+.projects-wrapper {
+  background: url(../assets/backgrounds/projects.jpg) no-repeat bottom right;
+  background-size: cover;
+  position: relative;
+  padding-top: 2rem;
+}
