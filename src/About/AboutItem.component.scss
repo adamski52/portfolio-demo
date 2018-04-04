@@ -15,11 +15,11 @@ $transition: all .1s linear;
   white-space: pre-wrap;
   color: #fff;
   height: 2em;
-  font-size: 1em;
+  font-size: .95em;
 
   &[class^="jna-icon-"]:before,
   &[class*=" jna-icon-"]:before {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     position: absolute;
     left: $left-home;
   }
@@ -46,7 +46,7 @@ $transition: all .1s linear;
 }
 
 .about-item-description {
-  font-size: .5em;
+  font-size: .5rem;
   display: block;
   position: absolute;
   left: $left-push;

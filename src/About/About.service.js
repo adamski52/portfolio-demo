@@ -41,7 +41,7 @@ class AboutService {
             className: "jna-icon-map-marker"
         }, {
             key: "Email",
-            value: "me@jonathanadamski.com",
+            value: "send me spam!",
             url: "mailto:me@jonathanadamski.com",
             className: "jna-icon-envelope"
         }, {

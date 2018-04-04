@@ -12,8 +12,8 @@ class About extends Component {
     makeSection(name) {
         return this.state[name].map((item) => {
             return (
-                <li key={item.key} className="col-md-4 col-md-push-0 col-xs-8 col-xs-push-2">
-                    <AboutItem item={item}></AboutItem>
+                <li key={item.key} className="col-xs-12 col-sm-12 col-md-4">
+                    <AboutItem item={item} />
                 </li>
             );
         });
@@ -22,11 +22,13 @@ class About extends Component {
     render() {
         return (
             <section className="section about-wrapper">
-                <div class="about-inner">
+                <div className="about-inner">
                     <h1 className="decorative">Jonathan Adamski</h1>
-                    <ul className="row">{this.makeSection("geographical")}</ul>
-                    <ul className="row">{this.makeSection("professional")}</ul>
-                    <ul className="row">{this.makeSection("social")}</ul>
+                    <div className="col-xs-8 col-xs-push-2 col-sm-6 col-sm-push-3 col-md-12 col-md-push-0 col-lg-8 col-lg-push-2">
+                        <ul className="row">{this.makeSection("geographical")}</ul>
+                        <ul className="row">{this.makeSection("professional")}</ul>
+                        <ul className="row">{this.makeSection("social")}</ul>
+                    </div>
                 </div>
             </section>
         );
