@@ -5,8 +5,7 @@ import AboutService from "./About.service";
 
 class About extends Component {
     componentWillMount() {
-        AboutService.subscribe(this);
-        AboutService.get();
+        AboutService.bind(this);
     }
 
     makeSection(name) {

@@ -1,5 +1,6 @@
 import Rx from "rxjs";
 import HttpService from "../Http.service";
+import ProjectsService from "../Projects/Projects.service";
 
 class AboutService {
     static mock = {
@@ -68,9 +69,22 @@ class AboutService {
         }, 750);
     }
 
-    static subscribe(context) {
-        return AboutService.subject.subscribe((about) => {
-            context.setState(about);
+    static bind(context) {
+        return AboutService.subject.subscribe((state) => {
+            context.setState(state);
+        });
+    }
+
+    static listen(handler = () => {}) {
+        return AboutService.subject.subscribe((state) => {
+            handler(state);
+        });
+    }
+
+    static subscribe(context, handler = () => {}) {
+        return AboutService.subject.subscribe((state) => {
+            context.setState(state);
+            handler(state);
         });
     }
 }

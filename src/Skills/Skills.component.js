@@ -9,7 +9,6 @@ class Skills extends Component {
 
     componentWillMount() {
         SkillsService.subscribe(this);
-        SkillsService.get();
     }
 
     getRandomDuration() {
@@ -31,18 +30,21 @@ class Skills extends Component {
     }
 
     getRandomPosition() {
+        let top = Math.round(Math.random() * 100),
+            left = Math.round(Math.random() * 100);
+
         return {
-            top: Math.round(Math.random() * (window.innerHeight - (this.gap * 2))),
-            left: Math.round(Math.random() * (window.innerWidth - (this.gap * 2))),
+            top: top + "%",
+            left: left + "%",
             position: "absolute"
         };
     }
 
     getItems() {
-        return this.state.skills.map((item) => {
+        return this.state.skills.map((skill) => {
             return (
-                <li key={item.key} tabIndex="0" style={this.getRandomPosition()} className={this.getClassNames()}>
-                    <SkillItem item={item} />
+                <li key={skill.key} tabIndex="0" style={this.getRandomPosition()} className={this.getClassNames()}>
+                    <SkillItem skill={skill} />
                 </li>
             );
         });
