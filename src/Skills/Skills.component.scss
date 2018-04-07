@@ -5,6 +5,12 @@
 .skills-wrapper {
   background: url(../assets/backgrounds/skills.jpg) no-repeat bottom center;
   background-size: cover;
-  position: relative;
-  padding-top: 2rem;
+  padding: 60px 60px 90px 60px;
 }
+
+.skills-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+

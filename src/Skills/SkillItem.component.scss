@@ -31,7 +31,7 @@ $gauge-size: 101px;
   list-style: none;
   display: inline-block;
   position: relative;
-  margin: -10px;
+  margin: -50px 0 0 -50px;
 
   &:hover,
   &:active,
@@ -62,12 +62,12 @@ $gauge-size: 101px;
   width: 200%;
   left: -50%;
   text-align: center;
-  top: 95px;
+  top: 100px;
   text-shadow: 0 0 5px $skills-background;
   padding: 0;
   border-radius: 5px;
   font-weight: bold;
-  line-height: 1.75rem;
+  line-height: 1.4rem;
   height: 1.4rem;
 }
 

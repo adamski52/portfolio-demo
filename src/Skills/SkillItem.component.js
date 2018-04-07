@@ -23,7 +23,7 @@ class SkillItem extends Component {
         let classes = [
             "skill-item-icon",
             "skill-item-indicator-" + this.state.value,
-            this.props.item.className,
+            this.props.skill.className,
             "depth-" + this.getRandomDepth()
         ];
         return classes.join(" ");
@@ -49,7 +49,7 @@ class SkillItem extends Component {
             return;
         }
 
-        if(delta > 0 && this.state.value >= this.props.item.skill) {
+        if(delta > 0 && this.state.value >= this.props.skill.proficiency) {
             clearInterval(this.ticker);
             return;
         }
@@ -70,7 +70,7 @@ class SkillItem extends Component {
                 <div className="skill-item-gauge">
                     <div className="skill-item-gauge-indicator"/>
                 </div>
-                <div className="skill-item-talent">{this.props.item.key}</div>
+                <div className="skill-item-talent">{this.props.skill.key}</div>
             </div>
         );
     }
