@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import "variables";
+@import "_styles/variables";
 
 // Reset and dependencies
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
@@ -49,6 +49,10 @@
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
 
-@import "jna-icons";
-@import "fonts";
-@import "global";
+@import "_styles/jna-icons";
+@import "_styles/fonts";
+@import "_styles/global";
+
+@import "_styles/about";
+@import "_styles/skills";
+@import "_styles/projects";

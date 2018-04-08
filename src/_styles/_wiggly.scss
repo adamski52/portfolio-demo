@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+@import "variables";
+
+@keyframes wiggle {
+  0% {
+    transform: translate(0px,0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(-5px,10px) rotate(-15deg);
+  }
+  50% {
+    transform: translate(0px,-5px) rotate(0deg);
+  }
+  75% {
+    transform: translate(5px,10px) rotate(15deg);
+  }
+}
+
+.wiggle {
+  animation-name: wiggle;
+  animation-timing-function: ease;
+  transform-origin: 50% 50%;
+  animation-iteration-count: infinite;
+  position: relative;
+}

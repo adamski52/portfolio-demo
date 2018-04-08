@@ -1,0 +1,83 @@
+@charset "UTF-8";
+@import "variables";
+
+.jna-component--heading {
+  margin: 0 0 .5rem 0;
+  font-family: $theme-font-decorative;
+  text-align: center;
+  color: $theme-global-primary;
+  font-size: 2.5rem;
+}
+
+.jna-container--abouts {
+  background: url(../_assets/about/background.jpg) no-repeat bottom center;
+  background-size: cover;
+  position: relative;
+  padding-top: 2rem;
+}
+
+.jna-component--about-text {
+  position: absolute;
+  left: $theme-global-sizing-small;
+  top: $theme-global-sizing-small;
+}
+
+.jna-component--about-link {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    color: $theme-global-primary;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.jna-component--about-description {
+  font-size: .5rem;
+  display: block;
+  position: absolute;
+  left: $theme-global-sizing-small;
+}
+
+
+@media (min-width: $screen-md-min) {
+  .jna-component--about-text {
+    transition: $theme-global-transition;
+    top: $theme-global-sizing-small;
+  }
+
+  .jna-component--about-description {
+    transition: $theme-global-transition;
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  .jna-component--about {
+    &:hover {
+      .jna-component--about-text,
+      .jna-component--about-link {
+        top: $theme-global-sizing-small;
+      }
+
+      .jna-component--about-description {
+        max-height: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .jna-component--heading {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .jna-component--heading {
+    font-size: 4rem;
+  }
+}

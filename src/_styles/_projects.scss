@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@import "variables";
+
+.jna-container--projects {
+  background: url(../_assets/projects/background.jpg) no-repeat bottom right;
+  background-size: cover;
+  position: relative;
+  padding-top: 2rem;
+}
+
+.jna-component--project {
+  background: rgba($theme-global-primary, .6);
+  padding: 5px;
+  width: 100%;
+  margin: 5px 0;
+  transition: all .2s linear;
+  position: relative;
+
+  &:hover,
+  &:active,
+  &:focus {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px $theme-global-primary;
+    z-index: 9999;
+    background: $theme-global-primary;
+  }
+}
+
+.jna-component--project-thumbnail {
+  width: 100%;
+}
+
+.jna-component--project-name,
+.jna-container--project-actions {
+  height: 2.5rem;
+  font-size: .8rem;
+  line-height: 2.4rem;
+}
+
+.jna-theme--view-code {
+  background: #792685;
+  color: #fff;
+  margin: 0 2px;
+}
+
+.jna-theme--view-live {
+  background: #d02f2c;
+  color: #fff;
+}
+
+.jna-component--project-action-button {
+  border-radius: 3px;
+  border: none;
+  float: right;
+  font-size: .6rem;
+  line-height: 1.6rem;
+  height: 100%;
+  padding: 0 5px;
+  margin-top: 3px;
+
+  &::before {
+    font-size: .7rem;
+    line-height: 1.25rem;
+    float: left;
+    margin-right: 3px;
+  }
+}
+
+.jna-component--project-name {
+  margin: 0;
+  transition: all .2s linear;
+}
