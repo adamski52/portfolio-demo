@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import About from "../Components/AboutItem";
+import About from "../Components/About";
 class AboutContainer extends Component {
     render() {
         return (
