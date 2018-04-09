@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import SkillsContainer from "../Containers/SkillsContainer";
+import SkillsContainer from "../Components/SkillsContainer";
 
 class SkillsPage extends Component {
     render() {

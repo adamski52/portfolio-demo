@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import PaginationButton from "../Components/PaginationButton";
-import ProjectsContainer from "../Containers/ProjectsContainer";
+import ProjectsContainer from "../Components/ProjectsContainer";
 
 class ProjectPage extends Component {
     render() {

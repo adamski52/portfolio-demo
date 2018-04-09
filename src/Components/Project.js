@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import ProjectThumbnail from "./ProjectThumbnail";
 import ProjectTitle from "./ProjectTitle";
-import ProjectActionsContainer from "../Containers/ProjectActionsContainer";
+import ProjectActionsContainer from "./ProjectActionsContainer";
 
 class Project extends Component {
     render() {

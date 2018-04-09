@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Technology from "../Components/Technology";
+import Technology from "./Technology";
 
 class TechnologiesContainer extends Component {
     render() {

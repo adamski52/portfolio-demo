@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import ProjectActionButton from "../Components/ProjectActionButton";
+import ProjectActionButton from "./ProjectActionButton";
 
 class ProjectActionsContainer extends Component {
     render() {

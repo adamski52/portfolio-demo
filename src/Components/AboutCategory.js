@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import About from "../Components/About";
-class AboutContainer extends Component {
+import About from "./About";
+class AboutCategory extends Component {
     render() {
         return (
             <ul className="row jna-container--abouts">{
@@ -16,4 +16,4 @@ class AboutContainer extends Component {
     }
 }
 
-export default AboutContainer;
+export default AboutCategory;

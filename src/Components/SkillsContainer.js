@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Skill from "../Components/Skill";
+import Skill from "./Skill";
 import Positioned from "../Effects/Positioned";
 import Wiggly from "../Effects/Wiggly";
 
