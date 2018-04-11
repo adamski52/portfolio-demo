@@ -22,10 +22,10 @@ class AboutHandler {
 
     static fetch() {
         return (dispatch) => {
-            dispatch(this.onFetchBegin());
+            dispatch(AboutHandler.onFetchBegin());
 
             setTimeout(() => {
-                dispatch(this.onFetchSuccess(this.MOCK));
+                dispatch(AboutHandler.onFetchSuccess(AboutHandler.MOCK));
             }, 750);
             // return fetch("/api/about").then((response) => {
             //     return response.json();
@@ -39,20 +39,20 @@ class AboutHandler {
 
     static onFetchBegin() {
         return {
-            type: this.FETCH_BEGIN
+            type: AboutHandler.FETCH_BEGIN
         };
     }
 
     static onFetchSuccess(data) {
         return {
-            type: this.FETCH_SUCCESS,
+            type: AboutHandler.FETCH_SUCCESS,
             data: data
         };
     };
 
     static onFetchError(error) {
         return {
-            type: this.FETCH_ERROR,
+            type: AboutHandler.FETCH_ERROR,
             error: error
         };
     };

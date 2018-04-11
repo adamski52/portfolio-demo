@@ -6,14 +6,11 @@ class PaginationButton extends Component {
         this.iconClass = this.props.delta > 0 ? "jna-icons-double-down" : "jna-icons-double-up";
     }
 
-    static onClick(e) {
-        e.preventDefault();
-        console.log("delta: ", this.props.delta);
-    }
-
     render() {
         return (
-            <button className={this.iconClass + " jna-component--pagination-button"} onClick={PaginationButton.onClick} />
+            <button className={this.iconClass + " jna-component--pagination-button"} onClick={(e) => {
+                this.props.onChangePage(this.props.delta);
+            }} />
         );
     }
 }

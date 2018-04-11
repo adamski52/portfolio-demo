@@ -1,10 +1,64 @@
-import Rx from "rxjs";
-import HttpService from "../Http.service";
-import ProjectsService from "./Projects.service";
-import AboutService from "./About.service";
+import fetch from "cross-fetch";
 
-class SkillsService {
-    static mock = [{
+class SkillsHandler {
+    static FETCH_BEGIN = "SKILLS_FETCH_BEGIN";
+    static FETCH_SUCCESS = "SKILLS_FETCH_SUCCESS";
+    static FETCH_ERROR = "SKILLS_FETCH_ERROR";
+
+    static INITIAL_STATE = {
+        skills: []
+    };
+
+    static reducer(state = SkillsHandler.INITIAL_STATE, action) {
+        switch(action.type) {
+            case SkillsHandler.FETCH_SUCCESS:
+                return Object.assign({}, state, {
+                    skills: action.data
+                });
+
+            default:
+                return state;
+        }
+    }
+
+    static fetch() {
+        return (dispatch) => {
+            dispatch(SkillsHandler.onFetchBegin());
+
+            setTimeout(() => {
+                dispatch(SkillsHandler.onFetchSuccess(SkillsHandler.MOCK));
+            }, 750);
+            // return fetch("/api/skills").then((response) => {
+            //     return response.json();
+            // }).then((json) => {
+            //     dispatch(SkillsHandler.onFetchSuccess(json));
+            // }).catch((error) => {
+            //     dispatch(SkillsHandler.onFetchError(error));
+            // });
+        };
+    }
+
+    static onFetchBegin() {
+        return {
+            type: SkillsHandler.FETCH_BEGIN
+        };
+    }
+
+    static onFetchSuccess(data) {
+        return {
+            type: SkillsHandler.FETCH_SUCCESS,
+            data: data
+        };
+    };
+
+    static onFetchError(error) {
+        return {
+            type: SkillsHandler.FETCH_ERROR,
+            error: error
+        };
+    };
+
+    static MOCK = [{
         key: "NPM",
         proficiency: 100,
         className: "devicon-npm-original-wordmark"
@@ -357,41 +411,6 @@ class SkillsService {
         proficiency: 60,
         className: "devicon-wordpress-plain"
     }];
-
-    static subject = new Rx.BehaviorSubject({
-        skills: []
-    });
-
-    static get() {
-        // return HttpService.get("/skills").then((response) => {
-        //     SkillsService.subject.next(response);
-        // });
-
-        setTimeout(() => {
-            SkillsService.subject.next({
-                skills: SkillsService.mock
-            });
-        }, 750);
-    }
-
-    static bind(context) {
-        return SkillsService.subject.subscribe((state) => {
-            context.setState(state);
-        });
-    }
-
-    static listen(handler = () => {}) {
-        return SkillsService.subject.subscribe((state) => {
-            handler(state);
-        });
-    }
-
-    static subscribe(context, handler = () => {}) {
-        return SkillsService.subject.subscribe((state) => {
-            context.setState(state);
-            handler(state);
-        });
-    }
 }
 
-export default SkillsService;
+export default SkillsHandler;

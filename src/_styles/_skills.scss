@@ -1,10 +1,11 @@
 @charset "UTF-8";
 @import "variables";
 
-.jna-container--skills {
+.jna-page--skills {
   background: url(_assets/skills/background.jpg) no-repeat bottom center;
   background-size: cover;
   padding: 60px 60px 90px 60px;
+  color: $theme-global-primary;
 }
 
 .jna-component--skill {
@@ -22,4 +23,8 @@
       opacity: 1;
     }
   }
+}
+
+.jna-component--technology {
+  font-size: 2rem;
 }

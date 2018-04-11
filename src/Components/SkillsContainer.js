@@ -9,9 +9,9 @@ class SkillsContainer extends Component {
             <ul className="jna-container--skills">{
                 this.props.items.map((item) => {
                     return (
-                        <Positioned children={
+                        <Positioned key={item.key} children={
                             <Wiggly children={
-                                <Skill key={item.key} item={item}/>
+                                <Skill item={item}/>
                             }/>
                         }/>
                     );

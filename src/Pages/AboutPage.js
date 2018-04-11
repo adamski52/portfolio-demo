@@ -22,25 +22,21 @@ class AboutPage extends Component {
             </section>
         );
     }
+}
 
-    static mapStateToProps(state) {
+export default connect(
+    (state) => {
         return {
             geographical: state.about.geographical,
             professional: state.about.professional,
             social: state.about.social
-        };
-    }
-
-    static mapDispatchToProps(dispatch) {
+        }
+    },
+    (dispatch) => {
         return {
             fetch: () => {
-                 dispatch(AboutHandler.fetch());
+                dispatch(AboutHandler.fetch());
             }
         };
     }
-}
-
-export default connect(
-    AboutPage.mapStateToProps,
-    AboutPage.mapDispatchToProps
 )(AboutPage);

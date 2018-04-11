@@ -1,17 +1,14 @@
 import {combineReducers} from "redux";
-// import ProjectsReducer from "./ProjectsReducer";
-// import SkillsReducer from "./SkillsReducer";
-// import HistoryReducer from "./HistoryReducer";
-// import ContactReducer from "./ContactReducer";
-// import NavReducer from "./NavReducer";
+import ProjectsHandler from "./ProjectsHandler";
 import AboutHandler from "./AboutHandler";
+import SkillsHandler from "./SkillsHandler";
 
 class AppHandler {
     static reducer = combineReducers({
         // nav: NavReducer.reducer,
         about: AboutHandler.reducer,
-        // skills: SkillsReducer.reducer,
-        // projects: ProjectsReducer.reducer,
+        skills: SkillsHandler.reducer,
+        projects: ProjectsHandler.reducer
         // history: HistoryReducer.reducer,
         // contact: ContactReducer.reducer
     });
