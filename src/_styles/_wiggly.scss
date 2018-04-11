@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 @import "variables";
 
 @keyframes wiggle {
@@ -17,7 +16,19 @@
   }
 }
 
-.wiggle {
+@for $duration from 1 through 4 {
+  .jna-effect--wiggly-duration-#{$duration} {
+    animation-duration: 10s * $duration;
+  }
+}
+
+@for $offset from 1 through 40 {
+  .jna-effect--wiggly-offset-#{$offset} {
+    animation-delay: $offset * -1s;
+  }
+}
+
+.jna-effect--wiggly {
   animation-name: wiggle;
   animation-timing-function: ease;
   transform-origin: 50% 50%;

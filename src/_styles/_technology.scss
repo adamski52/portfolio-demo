@@ -1,0 +1,20 @@
+@charset "UTF-8";
+@import "variables";
+
+.jna-component--technology {
+  animation-direction: reverse;
+  transform: scale(.5);
+  transition: .1s all linear;
+  position: relative;
+  z-index: 5;
+  display: block;
+  border: 10px solid $theme-technology-primary;
+  background: $theme-technology-secondary;
+  text-align: center;
+  line-height: 5rem;
+  width: $theme-gauge-size;
+  height: $theme-gauge-size;
+  border-radius: $theme-gauge-size;
+  font-size: 3rem;
+  color: $theme-technology-primary;
+}

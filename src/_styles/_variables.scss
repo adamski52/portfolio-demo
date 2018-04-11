@@ -24,4 +24,10 @@ $theme-skills-primary: #57342f;
 $theme-skills-secondary: #d5bcbb;
 $theme-skills-highlight: $theme-global-primary;
 
-$gauge-size: 101px;
+$theme-gauge-perfect-glow: $theme-global-primary;
+$theme-gauge-size: 101px;
+$theme-gauge-primary: $theme-global-primary;
+$theme-gauge-secondary: $theme-skills-primary;
+
+$theme-technology-primary: $theme-skills-primary;
+$theme-technology-secondary: $theme-skills-secondary;
