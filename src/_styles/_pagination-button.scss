@@ -1,0 +1,8 @@
+@charset "UTF-8";
+@import "variables";
+
+.jna-component--pagination-button {
+  @extend .btn;
+  color: $theme-global-primary;
+  text-shadow: 0 0 10px #000;
+}

@@ -5,7 +5,7 @@ class ProjectsContainer extends Component {
     render() {
         return (
             <div className="jna-container--projects">
-                <ul className="col-xs-12">{
+                <ul className="col-xs-12 jna-component--projects-projects">{
                     this.props.items.map((item) => {
                         return (
                             <li key={item.key} tabIndex="0" className="col-xs-6">
