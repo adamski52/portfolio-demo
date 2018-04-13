@@ -1,26 +1,61 @@
 @charset "UTF-8";
 @import "variables";
 
+.jna-page--about {
+  background: url(_assets/about/background.jpg) no-repeat bottom center;
+  background-size: cover;
+  padding-top: 5rem;
+  color: $theme-global-primary;
+}
+
 .jna-component--heading {
-  margin: 0 0 .5rem 0;
+  margin: 0 0 3rem 0;
   font-family: $theme-font-decorative;
   text-align: center;
   color: $theme-global-primary;
   font-size: 2.5rem;
 }
 
-.jna-page--about {
-  background: url(_assets/about/background.jpg) no-repeat bottom center;
-  background-size: cover;
-  position: relative;
-  padding-top: 2rem;
-  color: $theme-global-primary;
+.jna-container--abouts {
+  white-space: pre-wrap;
+  color: #fff;
+  height: 2em;
+  font-size: .95em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.jna-component--about-text {
-  position: absolute;
-  left: $theme-global-sizing-small;
+.jna-component--about {
+  position: relative;
+  height: 3rem;
+  margin-bottom: 1rem;
+
+  &:before {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.jna-component--about-description {
+  font-size: .5rem;
+  display: block;
   top: $theme-global-sizing-small;
+}
+
+.jna-component--about-text,
+.jna-component--about-link,
+.jna-component--about-description {
+  transition: $theme-global-transition;
+  position: absolute;
+  left: $theme-global-sizing-large;
+}
+
+.jna-component--about-text,
+.jna-component--about-link {
+  top: 3 * $theme-global-sizing-small;
 }
 
 .jna-component--about-link {
@@ -37,45 +72,45 @@
   }
 }
 
-.jna-component--about-description {
-  font-size: .5rem;
-  display: block;
-  position: absolute;
-  left: $theme-global-sizing-small;
-}
-
-
 @media (min-width: $screen-md-min) {
-  .jna-component--about-text {
-    transition: $theme-global-transition;
-    top: $theme-global-sizing-small;
-  }
-
-  .jna-component--about-description {
-    transition: $theme-global-transition;
-    overflow: hidden;
-    max-height: 0;
+  .jna-component--heading {
+    font-size: 3rem;
   }
 
   .jna-component--about {
+    padding-top: 18rem;
+
+    .jna-component--heading {
+      margin: 0 0 3rem 0;
+      font-family: $theme-font-decorative;
+      text-align: center;
+      color: $theme-global-primary;
+      font-size: 2.5rem;
+    }
+
+
+    .jna-component--about-description {
+      opacity: 0;
+    }
+
+    .jna-component--about-text,
+    .jna-component--about-link {
+      top: 0;
+    }
+
     &:hover {
       .jna-component--about-text,
       .jna-component--about-link {
-        top: $theme-global-sizing-small;
+        top: 3 * $theme-global-sizing-small;
       }
 
       .jna-component--about-description {
-        max-height: 100%;
+        opacity: 1;
       }
     }
   }
 }
 
-@media (min-width: $screen-md-min) {
-  .jna-component--heading {
-    font-size: 3rem;
-  }
-}
 
 @media (min-width: $screen-lg-min) {
   .jna-component--heading {

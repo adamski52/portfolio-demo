@@ -3,7 +3,7 @@ import React, {Component} from "react";
 class AboutDescription extends Component {
     render() {
         return (
-            <span className="jna-component--about-item-description">{this.props.value}</span>
+            <span className="jna-component--about-description">{this.props.value}</span>
         );
     }
 }

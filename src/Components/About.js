@@ -18,7 +18,7 @@ class About extends Component {
 
     render() {
         return (
-            <p className={"jna-component--about-item " + this.props.item.className}>
+            <p className={"jna-component--about " + this.props.item.className}>
                 <AboutDescription value={this.props.item.key} />
                 {this.getDescriptionItem()}
             </p>
