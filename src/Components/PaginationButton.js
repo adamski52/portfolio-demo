@@ -3,7 +3,7 @@ import React, {Component} from "react";
 class PaginationButton extends Component {
     constructor(props) {
         super(props);
-        this.iconClass = this.props.delta > 0 ? "jna-icons-double-down" : "jna-icons-double-up";
+        this.iconClass = this.props.delta > 0 ? "jna-icon-angle-double-down" : "jna-icon-angle-double-up";
     }
 
     render() {

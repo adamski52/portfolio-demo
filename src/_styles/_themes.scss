@@ -1,26 +1,12 @@
 @charset "UTF-8";
 @import "variables";
-@import "jna-icons";
-
-.jna-theme--hearts {
-  &button {
-    @extend .jna-icon-heart;
-  }
-}
 
 .jna-theme--view-live {
   background: $theme-view-live-primary;
   color: $theme-view-live-secondary;
-  &button {
-    @extend .jna-icon-code;
-  }
 }
 
 .jna-theme--view-code {
   background: $theme-view-code-primary;
   color: $theme-view-code-secondary;
-
-  &button {
-    @extend .jna-icon-code-fork
-  }
 }

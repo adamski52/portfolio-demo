@@ -8,16 +8,14 @@
   padding-top: 2rem;
 }
 
-.jna-component--projects-projects {
+.jna-component--projects {
   list-style: none;
-  padding: 0 20px;
 }
 
 .jna-component--projects-project {
   background: rgba($theme-global-primary, .6);
   padding: 5px;
   width: 100%;
-  margin: 5px 0;
   transition: $theme-global-transition;
   position: relative;
 
@@ -40,27 +38,51 @@
   font-size: .8rem;
   overflow: hidden;
   line-height: $theme-projects-footer-height;
+
+  .jna-component--projects-actions-button:nth-child(3),
+  .jna-component--projects-actions-button:nth-child(4){
+    @extend .pull-right;
+  }
+
+  .jna-component--projects-actions-button:nth-child(2) {
+    @extend .pull-left;
+  }
 }
 
 
-.jna-component--projects-title,
-.jna-component--projects-actions-button{
+.jna-component--projects-title {
   font-size: 1rem;
   margin: 0;
   padding: 0;
   height: 2rem;
   line-height: 2.4rem;
+  transition: $theme-global-transition;
+  transition-delay: .2s;
 }
 
 .jna-component--projects-actions-button {
   @extend .btn;
-  transition: $theme-global-transition;
+  font-size: .5rem;
+  padding: 0 5px;
+  line-height: 1.2rem;
+  height: 1rem;
+  border: 0;
+  margin: 4px 1px;
 
   &::before {
     font-size: .7rem;
-    line-height: 1.25rem;
-    float: left;
+    vertical-align: text-top;
     margin-right: 3px;
+  }
+}
+
+.jna-component--projects-projects {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 5px;
   }
 }
 
@@ -71,9 +93,9 @@
 }
 
 
-@media (min-width: $screen-md-min) {
-  .jna-component--projects-projects {
-    padding: 0 0 0 45px;
+@media (max-width: $screen-md-min) {
+  .jna-component--projects {
+    padding: 0 40px;
   }
 }
 

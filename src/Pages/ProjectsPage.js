@@ -13,7 +13,7 @@ class ProjectsPage extends Component {
     render() {
         return (
             <section className="jna-page--projects">
-                <div className="col-xs-12 col-md-7">
+                <div className="jna-component--projects col-xs-12 col-md-7">
                     <PaginationButton delta={-ProjectsHandler.scrollSize} onChangePage={this.props.onChangePage}/>
                     <ProjectsContainer items={this.props.items}/>
                     <PaginationButton delta={ProjectsHandler.scrollSize} onChangePage={this.props.onChangePage}/>

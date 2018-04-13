@@ -3,6 +3,11 @@
 
 .jna-component--pagination-button {
   @extend .btn;
+  background: rgba($theme-global-primary, .2);
   color: $theme-global-primary;
   text-shadow: 0 0 10px #000;
+  display: block;
+  margin: 0 auto;
+  line-height: .3rem;
+  padding: 5px 10px;
 }
