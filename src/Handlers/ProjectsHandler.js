@@ -7,7 +7,7 @@ class ProjectsHandler {
     static PAGE_CHANGE = "PROJECTS_PAGE_CHANGE";
 
     static allProjects = [];
-    static numVisible = 4;
+    static numVisible = 6;
     static scrollSize = 2;
     static curItem = 0;
 
@@ -172,6 +172,91 @@ class ProjectsHandler {
     }, {
         key: "project-5",
         name: "Project 5",
+        technologies: [
+            "JavaScript",
+            "Photoshop",
+            "React",
+            "Python",
+            "Django",
+            "Git",
+            "Github",
+            "AWS"
+        ],
+        repoUrl: "http://www.github.com/adamski52/repos/whatever",
+        liveUrl: "http://www.jonathanadamski.com/whatever",
+        thumbnailUrl: "https://raw.githubusercontent.com/adamski52/timeline-portfolio/master/thumbnail.jpg",
+        hearts: 1234
+    }, {
+        key: "project-6",
+        name: "Project 6",
+        technologies: [
+            "JavaScript",
+            "Photoshop",
+            "React",
+            "Python",
+            "Django",
+            "Git",
+            "Github",
+            "AWS"
+        ],
+        repoUrl: "http://www.github.com/adamski52/repos/whatever",
+        liveUrl: "http://www.jonathanadamski.com/whatever",
+        thumbnailUrl: "https://raw.githubusercontent.com/adamski52/timeline-portfolio/master/thumbnail.jpg",
+        hearts: 1234
+    }, {
+        key: "project-7",
+        name: "Project 7",
+        technologies: [
+            "JavaScript",
+            "Photoshop",
+            "React",
+            "Python",
+            "Django",
+            "Git",
+            "Github",
+            "AWS"
+        ],
+        repoUrl: "http://www.github.com/adamski52/repos/whatever",
+        liveUrl: "http://www.jonathanadamski.com/whatever",
+        thumbnailUrl: "https://raw.githubusercontent.com/adamski52/timeline-portfolio/master/thumbnail.jpg",
+        hearts: 1234
+    }, {
+        key: "project-8",
+        name: "Project 8",
+        technologies: [
+            "JavaScript",
+            "Photoshop",
+            "React",
+            "Python",
+            "Django",
+            "Git",
+            "Github",
+            "AWS"
+        ],
+        repoUrl: "http://www.github.com/adamski52/repos/whatever",
+        liveUrl: "http://www.jonathanadamski.com/whatever",
+        thumbnailUrl: "https://raw.githubusercontent.com/adamski52/timeline-portfolio/master/thumbnail.jpg",
+        hearts: 1234
+    }, {
+        key: "project-9",
+        name: "Project 9",
+        technologies: [
+            "JavaScript",
+            "Photoshop",
+            "React",
+            "Python",
+            "Django",
+            "Git",
+            "Github",
+            "AWS"
+        ],
+        repoUrl: "http://www.github.com/adamski52/repos/whatever",
+        liveUrl: "http://www.jonathanadamski.com/whatever",
+        thumbnailUrl: "https://raw.githubusercontent.com/adamski52/timeline-portfolio/master/thumbnail.jpg",
+        hearts: 1234
+    }, {
+        key: "project-10",
+        name: "Project 10",
         technologies: [
             "JavaScript",
             "Photoshop",
