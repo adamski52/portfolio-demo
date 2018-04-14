@@ -97,12 +97,23 @@
   display: block;
 }
 
+.jna-component--projects-technologies {
+  position: absolute;
+  top: 150px;
+  right: 40px;
+  width: 260px;
+  height: 500px;
+}
 
-@media (max-width: $screen-md-min) {
+
+@media (max-width: $screen-md-min - 1) {
   .jna-component--projects {
     padding: 0 20px;
   }
-}
 
+  .jna-component--projects-technologies {
+    display: none;
+  }
+}
 
 

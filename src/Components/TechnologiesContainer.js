@@ -1,13 +1,19 @@
 import React, {Component} from "react";
 import Technology from "./Technology";
+import Positioned from "../Effects/Positioned";
+import Wiggly from "../Effects/Wiggly";
 
 class TechnologiesContainer extends Component {
     render() {
         return (
-            <div className="col-md-push-1 col-md-4 jna-container--technologies">{
+            <div className="jna-container--technologies">{
                 this.props.items.map((item) => {
                     return (
-                        <Technology item={item} />
+                        <Positioned children={
+                            <Wiggly children={
+                                <Technology key={item.key} item={item}/>
+                            }/>
+                        }/>
                     );
                 })
             }</div>
