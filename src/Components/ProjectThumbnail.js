@@ -1,9 +1,17 @@
 import React, {Component} from "react";
 
 class ProjectThumbnail extends Component {
+    constructor(props) {
+        super(props);
+
+        this.style = {
+            backgroundImage: "url(" + this.props.item.thumbnailUrl + ")"
+        };
+    }
+
     render() {
         return (
-            <img className="jna-component--projects-thumbnail" alt={this.props.item.name} src={this.props.item.thumbnailUrl}/>
+            <div className="jna-component--projects-thumbnail" style={this.style} />
         );
     }
 }

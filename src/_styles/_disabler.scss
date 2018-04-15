@@ -1,0 +1,10 @@
+@charset "UTF-8";
+@import "variables";
+
+.jna-effect--disabler {
+  transition: $theme-global-transition-slow;
+}
+
+.jna-effect--disabler-disabled {
+  opacity: .2;
+}

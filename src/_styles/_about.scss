@@ -4,7 +4,7 @@
 .jna-page--about {
   background: url(_assets/about/background.jpg) no-repeat bottom center;
   background-size: cover;
-  padding-top: 5rem;
+  padding-top: 18rem;
   color: $theme-global-primary;
 }
 
@@ -34,7 +34,7 @@
   &:before {
     font-size: 1.5rem;
     position: absolute;
-    top: 0;
+    top: -$theme-global-sizing-small;
     left: 0;
   }
 }
@@ -42,7 +42,7 @@
 .jna-component--about-description {
   font-size: .5rem;
   display: block;
-  top: $theme-global-sizing-small;
+  top: -$theme-global-sizing-small;
 }
 
 .jna-component--about-text,
@@ -78,8 +78,6 @@
   }
 
   .jna-component--about {
-    padding-top: 18rem;
-
     .jna-component--heading {
       margin: 0 0 3rem 0;
       font-family: $theme-font-decorative;
@@ -101,7 +99,7 @@
     &:hover {
       .jna-component--about-text,
       .jna-component--about-link {
-        top: 3 * $theme-global-sizing-small;
+        top: $theme-global-sizing-small;
       }
 
       .jna-component--about-description {
