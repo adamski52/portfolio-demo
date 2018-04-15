@@ -42,7 +42,7 @@
 .jna-component--about-description {
   font-size: .5rem;
   display: block;
-  top: $theme-global-sizing-small;
+  top: -$theme-global-sizing-small;
 }
 
 .jna-component--about-text,
@@ -99,7 +99,7 @@
     &:hover {
       .jna-component--about-text,
       .jna-component--about-link {
-        top: 3 * $theme-global-sizing-small;
+        top: $theme-global-sizing-small;
       }
 
       .jna-component--about-description {
