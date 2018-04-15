@@ -8,7 +8,11 @@ class ProjectsContainer extends Component {
                 this.props.items.map((item) => {
                     return (
                         <li key={item.key} tabIndex="0" className="col-xs-12 col-sm-6">
-                            <Project onProjectActivate={this.props.onProjectActivate} item={item}/>
+                            <Project
+                                onProjectActivate={this.props.onProjectActivate}
+                                onProjectDeactivate={this.props.onProjectDeactivate}
+                                item={item}
+                            />
                         </li>
                     );
                 })

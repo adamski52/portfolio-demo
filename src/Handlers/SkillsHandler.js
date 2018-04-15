@@ -4,11 +4,9 @@ class SkillsHandler {
     static FETCH_BEGIN = "SKILLS_FETCH_BEGIN";
     static FETCH_SUCCESS = "SKILLS_FETCH_SUCCESS";
     static FETCH_ERROR = "SKILLS_FETCH_ERROR";
-    static ACTIVATE_PROJECT = "SKILLS_ACTIVATE_PROJECT";
 
     static INITIAL_STATE = {
-        skills: [],
-        activeProjectSkills: []
+        skills: []
     };
 
     static reducer(state = SkillsHandler.INITIAL_STATE, action) {
@@ -16,21 +14,6 @@ class SkillsHandler {
             case SkillsHandler.FETCH_SUCCESS:
                 return Object.assign({}, state, {
                     skills: action.data
-                });
-
-            case SkillsHandler.ACTIVATE_PROJECT:
-                let skills = state.skills.filter((skill) => {
-                    let skillName = skill.key.toLowerCase(),
-                        techName;
-
-                    return action.project.technologies.find((tech) => {
-                        techName = tech.toLowerCase();
-                        return skillName.indexOf(techName) > -1;
-                    });
-                });
-
-                return Object.assign({}, state, {
-                    activeProjectSkills: skills
                 });
 
             default:
@@ -74,13 +57,6 @@ class SkillsHandler {
             error: error
         };
     };
-
-    static onActivateProject(project) {
-        return {
-            type: SkillsHandler.ACTIVATE_PROJECT,
-            project: project
-        };
-    }
 
     static MOCK = [{
         key: "NPM",

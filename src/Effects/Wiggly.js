@@ -1,6 +1,10 @@
 import React, {Component} from "react";
 
 class Wiggly extends Component {
+    shouldComponentUpdate() {
+        return false;
+    }
+
     constructor(props) {
         super(props);
         this.offsetClass = "jna-effect--wiggly-offset-" + Wiggly.getRandomOffset();

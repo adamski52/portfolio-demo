@@ -4,7 +4,7 @@ import ProjectsContainer from "../Components/ProjectsContainer";
 import {connect} from "react-redux";
 import ProjectsHandler from "../Handlers/ProjectsHandler";
 import TechnologiesContainer from "../Components/TechnologiesContainer";
-import SkillsHandler from "../Handlers/SkillsHandler";
+import ActiveProjectHandler from "../Handlers/ActiveProjectHandler";
 
 class ProjectsPage extends Component {
     constructor(props) {
@@ -17,11 +17,11 @@ class ProjectsPage extends Component {
             <section className="jna-page--projects">
                 <div className="jna-component--projects col-xs-12 col-md-7">
                     <PaginationButton delta={-ProjectsHandler.scrollSize} onChangePage={this.props.onChangePage}/>
-                    <ProjectsContainer onProjectActivate={this.props.onProjectActivate} items={this.props.items}/>
+                    <ProjectsContainer onProjectDeactivate={this.props.onProjectDeactivate} onProjectActivate={this.props.onProjectActivate} items={this.props.items}/>
                     <PaginationButton delta={ProjectsHandler.scrollSize} onChangePage={this.props.onChangePage}/>
                 </div>
                 <div className="jna-component--projects-technologies">
-                    <TechnologiesContainer items={this.props.skills}/>
+                    <TechnologiesContainer skills={this.props.skills}/>
                 </div>
             </section>
         );
@@ -32,7 +32,7 @@ export default connect(
     (state) => {
         return {
             items: state.projects.projects,
-            skills: state.skills.activeProjectSkills
+            skills: state.skills.skills
         };
     },
     (dispatch) => {
@@ -41,7 +41,10 @@ export default connect(
                 dispatch(ProjectsHandler.fetch());
             },
             onProjectActivate: (project) => {
-                dispatch(SkillsHandler.onActivateProject(project));
+                dispatch(ActiveProjectHandler.onActivateProject(project));
+            },
+            onProjectDeactivate: () => {
+                dispatch(ActiveProjectHandler.onDeactivateProject());
             },
             onChangePage: (delta) => {
                 dispatch(ProjectsHandler.onChangePage(delta));

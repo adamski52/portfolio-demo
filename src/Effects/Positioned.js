@@ -1,6 +1,10 @@
 import React, {Component} from "react";
 
 class Positioned extends Component {
+    shouldComponentUpdate() {
+        return false;
+    }
+
     static getRandomPosition() {
         let top = Math.round(Math.random() * 100),
             left = Math.round(Math.random() * 100);
