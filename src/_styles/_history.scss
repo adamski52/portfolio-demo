@@ -1,0 +1,82 @@
+@charset "UTF-8";
+@import "variables";
+
+.jna-page--history {
+  background: url(_assets/history/background.jpg) no-repeat top center #000;
+  background-size: cover;
+  color: $theme-global-primary;
+}
+
+.jna-component--history-histories {
+  list-style: none;
+  margin-top: 100px;
+  padding: 0;
+  height: 500px;
+
+  & > li {
+    display: inline-block;
+    height: 100%;
+  }
+}
+
+.jna-component--history-history {
+  padding: 20px;
+  background: rgba($theme-global-primary, .2);
+  margin: 2rem 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.jna-component--history-item-minor {
+  transform: scale(.8);
+  filter: blur(5px);
+  opacity: .5;
+}
+
+.jna-component--history-item-major {
+  .jna-component--history-history {
+    box-shadow: rgba($theme-global-primary, .8) 0 0 50px;
+    border: 1px solid rgba($theme-global-primary, .2);
+  }
+}
+
+.jna-component--history-logo {
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 400px;
+  display: block;
+}
+
+.jna-component--history-title,
+.jna-component--history-name {
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+  font-family: $theme-font-main;
+}
+
+.jna-component--history-field {
+  color: #000;
+  font-weight: bold;
+}
+
+.jna-component--history-description {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jna-component--history-related {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  img {
+    height: 25px;
+  }
+}
