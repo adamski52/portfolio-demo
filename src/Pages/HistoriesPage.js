@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import {connect} from "react-redux"
-import HistoriesContainer from "../Components/HistoriesContainer";
 import HistoriesHandler from "../Handlers/HistoriesHandler";
+import HistoriesList from "../Components/HistoriesList";
+import History from "../Components/History";
 
 class HistoriesPage extends Component {
     constructor(props) {
@@ -11,8 +12,13 @@ class HistoriesPage extends Component {
 
     render() {
         return (
-            <section className="jna-page--history">
-                <HistoriesContainer items={this.props.items}/>
+            <section className="row jna-page--history">
+                <div className="col-xs-4">
+                    <HistoriesList items={this.props.items} onActivateHistory={this.props.onActivateHistory}/>
+                </div>
+                <div className="col-xs-8">
+                    <History item={this.props.activeItem}/>
+                </div>
             </section>
         );
     }
@@ -21,13 +27,17 @@ class HistoriesPage extends Component {
 export default connect(
     (state) => {
         return {
-            items: state.history.histories
+            items: state.history.histories,
+            activeItem: state.history.activeItem
         }
     },
     (dispatch) => {
         return {
             fetch: () => {
                 dispatch(HistoriesHandler.fetch());
+            },
+            onActivateHistory: (item) => {
+                dispatch(HistoriesHandler.onActivateHistory(item));
             }
         };
     }

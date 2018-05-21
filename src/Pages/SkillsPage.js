@@ -11,7 +11,7 @@ class SkillsPage extends Component {
 
     render() {
         return (
-            <section className="jna-page--skills">
+            <section className="row jna-page--skills">
                 <SkillsContainer items={this.props.items}/>
             </section>
         );

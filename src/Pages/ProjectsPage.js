@@ -14,7 +14,7 @@ class ProjectsPage extends Component {
 
     render() {
         return (
-            <section className="jna-page--projects">
+            <section className="row jna-page--projects">
                 <div className="jna-component--projects col-xs-12 col-md-7">
                     <PaginationButton delta={-ProjectsHandler.scrollSize} onChangePage={this.props.onChangePage}/>
                     <ProjectsContainer onProjectDeactivate={this.props.onProjectDeactivate} onProjectActivate={this.props.onProjectActivate} items={this.props.items}/>
@@ -36,6 +36,10 @@ export default connect(
         };
     },
     (dispatch) => {
+        window.addEventListener("resize", (e) => {
+            dispatch(ProjectsHandler.onResize(e.target.innerWidth));
+        });
+
         return {
             fetch: () => {
                 dispatch(ProjectsHandler.fetch());

@@ -1,15 +1,8 @@
 import React, {Component} from "react";
 
 class History extends Component {
-    getStyle() {
-        return {
-            backgroundImage: "url(" + this.props.item.thumbnailUrl + ")"
-        };
-    }
-
     render() {
-        console.log("item??", this.props.item);
-        if(!this.props.item.hasOwnProperty("name")) {
+        if(!this.props.item) {
             return (
                 <div className="jna-component--history-history-placeholder"/>
             );
@@ -22,11 +15,11 @@ class History extends Component {
                     <span className="jna-component--history-start-date">{this.props.item.startDate}</span>
                     <span className="jna-component--history-end-date">{this.props.item.endDate}</span>
                 </div>
-                <div className="col-xs-12">
+                <div className="col-xs-6">
                     <h2 className="jna-component--history-name"><span className="jna-component--history-field">Employer:</span> {this.props.item.name}</h2>
                     <h3 className="jna-component--history-title"><span className="jna-component--history-field">Job Title:</span> {this.props.item.jobTitle}</h3>
                 </div>
-                <ul className="col-sm-12 jna-component--history-description">{
+                <ul className="col-xs-6 jna-component--history-description">{
                     this.props.item.description.map((description, index) => {
                         return (
                             <li key={index}>{description}</li>
@@ -36,7 +29,7 @@ class History extends Component {
                 <ul className="col-xs-12 jna-component--history-related">{
                     this.props.item.related.map((related, index) => {
                         return (
-                            <li key={index}><img src={related.url} alt={related.description} /></li>
+                            <li className="col-xs-6" key={index}><img src={related.url} alt={related.description} /></li>
                         );
                     })
                 }</ul>

@@ -5,6 +5,7 @@ class ProjectsHandler {
     static FETCH_SUCCESS = "PROJECTS_FETCH_SUCCESS";
     static FETCH_ERROR = "PROJECTS_FETCH_ERROR";
     static PAGE_CHANGE = "PROJECTS_PAGE_CHANGE";
+    static RESIZE = "PROJECTS_RESIZE";
 
     static allProjects = [];
     static numVisible = 6;
@@ -40,6 +41,33 @@ class ProjectsHandler {
                     if (ProjectsHandler.curItem > max) {
                         ProjectsHandler.curItem = max;
                     }
+                }
+
+                return Object.assign({}, state, {
+                    projects: ProjectsHandler.getPaginatedProjects()
+                });
+
+            case ProjectsHandler.RESIZE:
+                let numVisibleAfter,
+                    scrollSizeAfter;
+
+                if(action.width <= 480) {
+                    numVisibleAfter = 4;
+                    scrollSizeAfter = 1;
+                } else {
+                    numVisibleAfter = 6;
+                    scrollSizeAfter = 2;
+                }
+
+                if(ProjectsHandler.numVisible === numVisibleAfter) {
+                    return state;
+                }
+
+                ProjectsHandler.numVisible = numVisibleAfter;
+                ProjectsHandler.scrollSize = scrollSizeAfter;
+                let max = ProjectsHandler.allProjects.length - ProjectsHandler.numVisible;
+                if (ProjectsHandler.curItem > max) {
+                    ProjectsHandler.curItem = max;
                 }
 
                 return Object.assign({}, state, {
@@ -94,6 +122,13 @@ class ProjectsHandler {
             error: error
         };
     };
+
+    static onResize(width) {
+        return {
+            type: ProjectsHandler.RESIZE,
+            width: width
+        };
+    }
 
     static MOCK = [{
         key: "project-1",

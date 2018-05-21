@@ -1,50 +1,27 @@
 import fetch from "cross-fetch";
-import ProjectsHandler from "./ProjectsHandler";
 
 class HistoriesHandler {
     static FETCH_BEGIN = "HISTORY_FETCH_BEGIN";
     static FETCH_SUCCESS = "HISTORY_FETCH_SUCCESS";
     static FETCH_ERROR = "HISTORY_FETCH_ERROR";
-    static PAGE_CHANGE = "HISTORY_PAGE_CHANGE";
-
-    static allHistories = [];
-    static numVisible = 3;
-    static scrollSize = 1;
-    static curItem = 0;
+    static ACTIVATE_ITEM = "HISTORY_ACTIVATE_ITEM";
 
     static INITIAL_STATE = {
-        histories: []
+        histories: [],
+        activeItem: undefined
     };
-
-    static getPaginatedHistories() {
-        return HistoriesHandler.allHistories.filter((item, index) => {
-            return index >= HistoriesHandler.curItem && index < HistoriesHandler.curItem + HistoriesHandler.numVisible;
-        });
-    }
 
     static reducer(state = HistoriesHandler.INITIAL_STATE, action) {
         switch(action.type) {
             case HistoriesHandler.FETCH_SUCCESS:
-                HistoriesHandler.allHistories = [].concat({}, action.data, {});
-
                 return Object.assign({}, state, {
-                    histories: HistoriesHandler.getPaginatedHistories()
+                    histories: action.data,
+                    activeItem: action.data[0]
                 });
 
-            case HistoriesHandler.PAGE_CHANGE:
-                HistoriesHandler.curItem = HistoriesHandler.curItem + action.delta;
-                if(HistoriesHandler.curItem < 0) {
-                    HistoriesHandler.curItem = 0;
-                }
-                else {
-                    let max = HistoriesHandler.allHistories.length - HistoriesHandler.numVisible;
-                    if (HistoriesHandler.curItem > max) {
-                        HistoriesHandler.curItem = max;
-                    }
-                }
-
+            case HistoriesHandler.ACTIVATE_ITEM:
                 return Object.assign({}, state, {
-                    histories: HistoriesHandler.getPaginatedHistories()
+                    activeItem: action.item
                 });
 
             default:
@@ -88,6 +65,13 @@ class HistoriesHandler {
             error: error
         };
     };
+
+    static onActivateHistory(item) {
+        return {
+            type: HistoriesHandler.ACTIVATE_ITEM,
+            item: item
+        };
+    }
 
     static MOCK = [{
         startDate: "01-01-2000",
